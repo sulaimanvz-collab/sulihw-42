@@ -3,7 +3,6 @@ import { User } from "../models/User.js";
 
 const router = Router();
 
-// Регистрация
 router.post("/register", async (req: Request, res: Response): Promise<void> => {
   try {
     const { username, password } = req.body;
