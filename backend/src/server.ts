@@ -1,4 +1,3 @@
-import "node";
 import express from "express";
 import http from "http";
 import cors from "cors";
@@ -20,7 +19,7 @@ app.use("/api/auth", authRoutes);
 
 setupWebSocket(server);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
