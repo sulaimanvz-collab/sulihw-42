@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.js";
 import authRoutes from "./routes/auth.js";
+import { setupWebSocket } from "./socket.js";
 
 dotenv.config();
 connectDB();
@@ -16,6 +17,8 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
+
+setupWebSocket(server);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
